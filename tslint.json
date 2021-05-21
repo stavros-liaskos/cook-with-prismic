@@ -1,0 +1,20 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "jsRules": {
+    "object-literal-sort-keys": false
+  },
+  "rules": {
+    "quotemark": [true, "single", "jsx-double"],
+    "no-empty": false,
+    "no-console": false,
+    "no-shadowed-variable": false,
+    "no-unused-expression": [true, "allow-fast-null-checks"],
+    "prefer-for-of": false,
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "interface-name": [true, "always-prefix"]
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "rulesDirectory": []
+}

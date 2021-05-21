@@ -1,0 +1,12 @@
+.eslintignore
+.git
+.gitignore
+.gitignore
+.eslintcache
+.prettierignore
+.next/**
+.vercel/**
+out/
+js/**
+node_modules/**
+*.json
