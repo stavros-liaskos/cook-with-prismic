@@ -7,10 +7,14 @@ import { client, linkResolver, hrefResolver } from '../prismic-configuration';
 const BlogHome = ({ home, posts, recipes }: any) => {
   console.warn(recipes);
   return (
-    <div>
-      <img src={home.data.image.url} alt="avatar" />
-      <h1>{RichText.asText(home.data.headline)}</h1>
-      <p>{RichText.asText(home.data.description)}</p>
+    <>
+      <div className="h-screen -mt-32 flex items-center justify-center">
+        <div>
+          <img src={home.data.image.url} alt="avatar" />
+          <h1 className="text-6xl">{RichText.asText(home.data.headline)}</h1>
+          <p className="text-2xl">{RichText.asText(home.data.description)}</p>
+        </div>
+      </div>
 
       <ul>
         {posts &&
@@ -27,13 +31,13 @@ const BlogHome = ({ home, posts, recipes }: any) => {
         {recipes?.results.map((recipe: any) => (
           <li key={recipe.uid}>
             <Link href={hrefResolver(recipe)} as={linkResolver(recipe)} passHref>
-              <a>{RichText.render(recipe.data.title)}</a>
+              <a className="text-lg">{RichText.render(recipe.data.title)}</a>
             </Link>
-            <span>{Date(recipe.data.date).toString()}</span>
+            <span className="text-xs">{Date(recipe.data.date).toString()}</span>
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 };
 
