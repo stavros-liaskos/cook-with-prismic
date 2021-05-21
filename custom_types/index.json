@@ -10,5 +10,11 @@
     "name": "Post",
     "repeatable": true,
     "value": "post.json"
+  },
+  {
+    "id": "recipe",
+    "name": "Recipe",
+    "repeatable": true,
+    "value": "recipe.json"
   }
 ]
