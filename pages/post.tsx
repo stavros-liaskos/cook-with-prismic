@@ -4,7 +4,7 @@ import { RichText, Date } from 'prismic-reactjs';
 import { client } from '../prismic-configuration';
 
 const Post = ({ post }: any) => (
-        <div>
+  <div>
     <Link href="/">
       <span>Back to blog list</span>
     </Link>
