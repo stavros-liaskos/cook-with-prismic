@@ -3,7 +3,7 @@ import { RichText, Date } from 'prismic-reactjs';
 
 import { client } from '../prismic-configuration';
 
-const Post = ({ recipe }: any) => (
+const Recipe = ({ recipe }: any) => (
   <div>
     <Link href="/">
       <a>Back to blog list</a>
@@ -23,4 +23,4 @@ export async function getServerSideProps({ query, res }: any) {
   return { props: { recipe } };
 }
 
-export default Post;
+export default Recipe;
