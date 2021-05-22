@@ -4,7 +4,10 @@ import 'tailwindcss/tailwind.css';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+      <div className="container mx-auto">
+    <Component {...pageProps} />
+  </div>);
 }
 
 // Only uncomment this method if you have blocking data requirements for
