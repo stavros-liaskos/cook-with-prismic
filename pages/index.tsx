@@ -2,16 +2,18 @@ import Prismic from 'prismic-javascript';
 import { RichText, Date } from 'prismic-reactjs';
 import Link from 'next/link';
 
-import { client, linkResolver, hrefResolver } from '../prismic-configuration';
+import { client } from '../prismic-configuration';
+import { linkResolver, hrefResolver } from '../utils/linkResolver';
+import htmlSerializer from '../utils/html-serializer';
 
 const BlogHome = ({ home, recipes }: any) => {
-  console.warn(recipes);
   return (
     <>
       <div className="h-screen -mt-32 flex items-center justify-center">
         <div>
           <img src={home.data.image.url} alt="avatar" />
-          <h1 className="text-6xl">{RichText.asText(home.data.headline)}</h1>
+
+          <RichText render={home.data.headline} htmlSerializer={htmlSerializer} />
           <p className="text-2xl">{RichText.asText(home.data.description)}</p>
         </div>
       </div>
@@ -19,10 +21,16 @@ const BlogHome = ({ home, recipes }: any) => {
       <ul>
         {recipes?.results.map((recipe: any) => (
           <li key={recipe.uid}>
+            <span className="text-xs">
+              {Intl.DateTimeFormat('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: '2-digit',
+              }).format(Date(recipe.data.date))}
+            </span>
             <Link href={hrefResolver(recipe)} as={linkResolver(recipe)} passHref>
               <a className="text-lg">{RichText.render(recipe.data.title)}</a>
             </Link>
-            <span className="text-xs">{Date(recipe.data.date).toString()}</span>
           </li>
         ))}
       </ul>
