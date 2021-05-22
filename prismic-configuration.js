@@ -9,14 +9,6 @@ export const apiEndpoint = 'https://cook-with-prismic.prismic.io/api/v2';
 // Generate a token in your dashboard and configure it here if your repository is private
 export const accessToken = '';
 
-// -- Link resolution rules
-// Manages links to internal Prismic documents
-// Modify as your project grows to handle any new routes you've made
-export const linkResolver = (doc) => `/${doc.type}/${doc.uid}`;
-
-// Additional helper function for Next/Link components
-export const hrefResolver = (doc) => `/${doc.type}?uid=${doc.uid}`;
-
 // -- Client method to query Prismic
 // Connects to the given repository to facilitate data queries
 export const client = Prismic.client(apiEndpoint, { accessToken });
