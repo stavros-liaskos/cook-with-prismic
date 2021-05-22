@@ -7,7 +7,6 @@ import { linkResolver, hrefResolver } from '../utils/linkResolver';
 import htmlSerializer from '../utils/html-serializer';
 
 const BlogHome = ({ home, recipes }: any) => {
-  console.warn(recipes);
   return (
     <>
       <div className="h-screen -mt-32 flex items-center justify-center">
