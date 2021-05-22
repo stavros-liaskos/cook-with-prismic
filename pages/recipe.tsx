@@ -14,7 +14,9 @@ const Recipe = ({ recipe }: any) => {
         <a>Back to blog list</a>
       </Link>
       <div className="border-2 border-black m-32">
-        <span className="bg-blue-300 table mb-2 p-2 text-white">{'yield: 4 servings'.toUpperCase()}</span>
+        <span className="bg-blue-300 table mb-2 p-2 text-white">
+          {'yield: 4 servings'.toUpperCase()}
+        </span>
 
         <RichText render={recipe.data.title} htmlSerializer={htmlSerializer} />
 
@@ -27,9 +29,9 @@ const Recipe = ({ recipe }: any) => {
           ))}
         </div>
 
-        <h3 className='text-3xl mb-4'>Ingredients</h3>
+        <h3 className="text-3xl mb-4">Ingredients</h3>
         <RichText render={recipe.data.ingredients} htmlSerializer={htmlSerializer} />
-        <h3 className='text-3xl mb-4'>Instructions</h3>
+        <h3 className="text-3xl mb-4">Instructions</h3>
         <RichText render={recipe.data.description} htmlSerializer={htmlSerializer} />
       </div>
     </Fragment>
