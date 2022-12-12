@@ -6,8 +6,11 @@ const propsWithUniqueKey = function (props: any, key: any) {
   return Object.assign(props || {}, { key });
 };
 
-// -- HTML Serializer
-// This function will be used to change the way the HTML is loaded
+/**
+ * https://prismic.io/docs/technologies/html-serializer-reactjs
+ * HTML Serializer
+ * This function will be used to change the way the HTML is loaded
+ */
 const htmlSerializer = function (type: any, _element: any, _content: any, children: any, key: any) {
   var props = {};
 
